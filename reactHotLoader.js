@@ -12,7 +12,7 @@ const resolveType = (type) => {
 const reactHotLoader = {
   register(type, name, id) {
     if (!type["PROXY_KEY"]) {
-      const key = `id-${name}`;
+      const key = `${id}-${name}`;
       type["PROXY_KEY"] = key;
       types.set(key, type);
       if (!proxies.get(key)) {
