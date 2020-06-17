@@ -1,20 +1,35 @@
 {
-  "name": "react-hot-loader",
-  "version": "1.0.0",
-  "description": "react-hot-loader简单实现",
-  "main": "root.js",
+  "name": "react-es-hot-loader",
+  "version": "0.0.2",
+  "description": "react-hot-loader for esmodule",
+  "main": "es/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "README.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf ./es && tsc && cp global.d.ts ./es"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gitHber/react-hot-loader.git"
-  },
+  "repository": "git+https://github.com/gitHber/react-hot-loader.git",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gitHber/react-hot-loader/issues"
   },
-  "homepage": "https://github.com/gitHber/react-hot-loader#readme"
+  "homepage": "https://github.com/gitHber/react-hot-loader#readme",
+  "dependencies": {
+    "@types/hoist-non-react-statics": "^3.3.1",
+    "hoist-non-react-statics": "^3.3.2"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.9.36",
+    "@types/react-dom": "^16.9.8",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  }
 }
