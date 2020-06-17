@@ -1,5 +1,4 @@
-// var hot = require("./hot").hot;
-var hot = require("react-hot-loader").hot;
+var hot = require("./hot").hot;
 let parent;
 if (module.hot) {
   const cache = require.cache;

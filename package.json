@@ -1,7 +1,7 @@
 {
   "name": "react-hot-loader",
   "version": "1.0.0",
-  "description": "react-hot-loader简单实现",
+  "description": "react-hot-loader esmodule 热更新",
   "main": "root.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
