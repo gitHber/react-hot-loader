@@ -13,7 +13,10 @@ const createHoc = (
   return TargetComponent;
 };
 
-export const hot = (meta: { url: string }, WrappedComponent: ReactType) => {
+export const hot = (
+  meta: { url: string },
+  WrappedComponent: React.FunctionComponent
+) => {
   if (!meta) {
     throw new Error("meta is not provide");
   }
@@ -23,13 +26,13 @@ export const hot = (meta: { url: string }, WrappedComponent: ReactType) => {
   const [module] = hotModule(moduleId);
 
   reactHotLoader.register(
-    WrappedComponent,
+    WrappedComponent as ReactType,
     WrappedComponent.displayName || WrappedComponent.name,
     moduleId
   );
   Promise.resolve().then(() => reactRerender(moduleId));
   return createHoc(
-    WrappedComponent,
+    WrappedComponent as ReactType,
     class Hoc extends React.Component {
       componentDidMount() {
         module.instances.push(this);
